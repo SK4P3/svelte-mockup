@@ -1,58 +1,66 @@
-# create-svelte
-https://mockups-design.com/free-iphone-14-pro-mockup/
-Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+# Svelte Mockups
 
-Read more about creating a library [in the docs](https://kit.svelte.dev/docs/packaging).
+This library is meant to provde a simple solution for mockups in SvelteKit.
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
+## Installation
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+npm install svelte-mockups
 ```
 
-## Developing
+## Usage
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+> All of the parameters have been set to fit a screenshot with the dimesions 461px x 1000px (WxH) and an aspect ratio must be 19.5:9.
+> If you use a screen-image with different dimensions, you might need to adjust the parameters: most commonly screenWidth, screenHeight, translateX and translateY!
 
-```bash
-npm run dev
+Usage with a screenshot thats 461px x 1000px:
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+```html
+<script lang="ts">
+  import IPhone14 from "./IPhone14.svelte";
+  import screenshot from "$lib/assets/screenshot.png";
+</script>
+
+<IPhone14 screen="{screenshot}" />
+
+<IPhone14 screen="{screenshot}" type="side-right" />
+<IPhone14 screen="{screenshot}" type="side-left" />
+
+<IPhone14 screen="{screenshot}" type="hover-right" />
+<IPhone14 screen="{screenshot}" type="hover-left" />
 ```
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
+## Parameters
 
-## Building
+- scale
+- screenHeight
+- screenWidth
+- skewX
+- skewY
+- translateY
+- translateX
+- rotate
 
-To build your library:
+```html
+<script lang="ts">
+  import IPhone14 from "./IPhone14.svelte";
+  import screenshot from "$lib/assets/screenshot.png";
+</script>
 
-```bash
-npm run package
+<IPhone14
+  screen="{screenshot}"
+  type="hover-left"
+  scale="90%"
+  rotate="0deg"
+  screenHeight="100%"
+  screenWidth="100%"
+  skewX="10deg"
+  skewY="10deg"
+  translateX="20px"
+  translateY="20px"
+/>
 ```
 
-To create a production version of your showcase app:
+## The mockups used in this project are from [mockups-design.com](https://mockups-design.com/free-iphone-14-pro-mockup/). They were Slightly edited to fit better for this project.
 
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
-
-## Publishing
-
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
-
-To publish your library to [npm](https://www.npmjs.com):
-
-```bash
-npm publish
-```
+## They are <u>royalty free</u> and can be used commercially as specified in their [License](https://mockups-design.com/license/).

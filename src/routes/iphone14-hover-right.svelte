@@ -3,6 +3,7 @@
   export let skewY: any;
   export let translateY: any;
   export let translateX: any;
+  export let rotate: any;
 
   export let scale: any;
   export let screen: any;
@@ -18,10 +19,10 @@
       class="screen"
       width={screenWidth}
       height={screenHeight}
-      style="--skewX:{skewX};--skewY:{skewY};--translateY:{translateY};--translateX:{translateX};"
+      style="--rotate:{rotate};--skewX:{skewX};--skewY:{skewY};--translateY:{translateY};--translateX:{translateX};"
     />
   </div>
-  <img src="/iphone14_side_left.png" alt="phone" class="phone" />
+  <img src="/iphone14_hover_right.png" alt="phone" class="phone" />
 </div>
 
 <style>
@@ -42,7 +43,7 @@
     justify-content: center;
     width: 900px;
     height: 900px;
-    -webkit-mask: url("/iphone14_side_left_mask.svg") no-repeat;
+    -webkit-mask: url("/iphone14_hover_right_mask.png") no-repeat;
   }
 
   .phone {
@@ -55,7 +56,8 @@
 
   .screen {
     mask-origin: inherit;
-    transform: skewX(var(--skewX)) skewY(var(--skewY)) translateY(var(--translateY)) translateX(var(--translateX));
+    transform: rotate(var(--rotate)) skewX(var(--skewX)) skewY(var(--skewY)) translateY(var(--translateY))
+      translateX(var(--translateX));
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-position: center;
