@@ -2,12 +2,6 @@
 
 This library is meant to provde a simple solution for mockups in SvelteKit.
 
-## Installation
-
-```bash
-npm install svelte-mockups
-```
-
 ## Usage
 
 > All of the parameters have been set to fit a screenshot with the dimesions 461px x 1000px (WxH) and an aspect ratio must be 19.5:9.
